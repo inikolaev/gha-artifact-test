@@ -1,0 +1,16 @@
+name: Workflow 2
+
+on: push
+
+jobs:
+  create-draft-release:
+    name: Download artifact
+    runs-on: ubuntu-latest
+    steps:
+      - name: Upload artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: Artifact
+          path: .
+      - name: Print artifact
+        run: cat .artifact

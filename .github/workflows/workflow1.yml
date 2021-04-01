@@ -1,0 +1,17 @@
+name: Workflow 1
+
+on: push
+
+jobs:
+  create-draft-release:
+    name: Create draft release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Save artifact
+        run: echo "some artifact" > .artifact
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Artifact
+          path: .artifact
+          retention-days: 1
