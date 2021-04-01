@@ -4,7 +4,7 @@ on: push
 
 jobs:
   create-draft-release:
-    name: Create draft release
+    name: Save artifact
     runs-on: ubuntu-latest
     steps:
       - name: Save artifact
