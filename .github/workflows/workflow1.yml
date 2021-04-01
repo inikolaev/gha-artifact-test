@@ -12,6 +12,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: Artifact
+          name: Artifact ${{github.sha}}
           path: .artifact
           retention-days: 1

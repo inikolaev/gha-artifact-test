@@ -12,3 +12,8 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           curl -H "Authorization: Bearer ${GITHUB_TOKEN}" https://api.github.com/repos/inikolaev/gha-artifact-test/actions/artifacts
+      - name: Print one artifacts
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        run: |
+          curl -H "Authorization: Bearer ${GITHUB_TOKEN}" https://api.github.com/repos/inikolaev/gha-artifact-test/actions/artifacts | jq -r '.artifacts[] | select(.name | contains("Artifact ${{github.sha}}")).archive_download_url'
