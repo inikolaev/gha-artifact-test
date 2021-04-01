@@ -7,11 +7,6 @@ jobs:
     name: Download artifact
     runs-on: ubuntu-latest
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: Artifact
-          path: .
       - name: Print all artifacts
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
