@@ -14,6 +14,6 @@ jobs:
           path: .
       - name: Print all artifacts
         env:
-          - GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           curl -H "Authorization: Bearer ${GITHUB_TOKEN}" https://api.github.com/repos/inikolaev/gha-artifact-test/actions/artifacts
